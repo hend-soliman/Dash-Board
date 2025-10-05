@@ -55,15 +55,13 @@ let removePhone =(index) => {
         denyButtonText:"no not now",
     })
     .then((result) => {
-      if (result.isconfirmed){
+      if (result.isConfirmed){
       products.splice(index,1);
       localStorage.setItem('products',JSON.stringify(products));
       showProducts();
      
       }
     });
-      
-
 };
   
 let makeAlert =() =>{
