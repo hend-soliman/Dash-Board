@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board</title>
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container d-flex flex-column gap-4 p-3">
+        <h1 class="d-flex justify-content-center ">Dash Board</h1>
+        <div class="d-flex gap-3">
+            <!-- <button onclick="showProducts()" class="btn btn-dark" >show products</button> -->
+            <button class="btn btn-primary" onclick="openModal()">Add New Phone</button>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Qty</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+           <div onclick="closeModal()" id="modal" class="d-none align-items-center justify-content-center">
+        <div onclick="event.stopPropagation( )" class="col-5 bg-white rounded shadow border p-4 d-flex flex-column gap-3 animate__animated animate__fadeInDown">
+            <h3>Add New Product</h3>
+            <input id="productName" class="form-control" placeholder="Enter New Phone Name">
+            <input id="productPrice" class="form-control" placeholder="Enter New Phone Price ">
+            <input id="productQty" class="form-control" placeholder="Enter New Phone qty ">
+            <button onclick="addNewPhone()" class="btn btn-success">save phone</button>
+        </div>
+    </div>
+       <div onclick="closeModal2()" id="modal2" class="d-none align-items-center justify-content-center">
+        <div onclick="event.stopPropagation( )" class="col-5 bg-white rounded shadow border p-4 d-flex flex-column gap-3 animate__animated animate__fadeInDown">
+            <h3>Edit Product</h3>
+            <input id="productName2" class="form-control" placeholder="Edit Phone Name">
+            <input id="productPrice2" class="form-control" placeholder="Edit Phone Price ">
+            <input id="productQty2" class="form-control" placeholder="Edit Phone qty ">
+            <button onclick="EditPhoneData()" class="btn btn-success">save phone</button>
+        </div>
+    </div>
+    </div>
+ 
+    <!-- <button class="btn btn-danger" onclick="makeAlert()">open alert </button> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
