@@ -5,8 +5,6 @@
 //     {name: 'iphone13' , price:700 , qty:4},
 // ];
 
-//  let productJ = JSON.stringify(products);
-//  localStorage.setItem('products',productJ);
 let productJ = localStorage.getItem('products');
 let products = productJ ?  JSON.parse(productJ) : [];
 let table = document.querySelector('table tbody');
@@ -46,9 +44,9 @@ showProducts();
 
 
 let removePhone =(index) => {
-    // let sureIndex = confirm('are you sure?');
 
-    let sureIndex = swal.fire({
+     swal
+     .fire({
         icon:"question",
         title:"Are You Sure ? ",
         text:"the item will be deleted",
@@ -56,13 +54,18 @@ let removePhone =(index) => {
         showDenyButton:"true",
         denyButtonText:"no not now",
     })
-}
-//     if(sureIndex == true) {
-//  products.splice(index,1);
-//      localStorage.setItem('products',JSON.stringify(products));
-//      showProducts();
-//      }
+    .then((result) => {
+      if (result.isconfirmed){
+      products.splice(index,1);
+      localStorage.setItem('products',JSON.stringify(products));
+      showProducts();
+     
+      }
+    });
+      
 
+};
+  
 let makeAlert =() =>{
     swal.fire({
         icon:"success",
