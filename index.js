@@ -4,13 +4,11 @@
 //     {name: 'iphone12' , price:600 , qty:10},
 //     {name: 'iphone13' , price:700 , qty:4},
 // ];
-// let productJ = JSON.stringify(products);
-// localStorage.setItem('products',productJ);
 
-
-
+//  let productJ = JSON.stringify(products);
+//  localStorage.setItem('products',productJ);
 let productJ = localStorage.getItem('products');
-let products = JSON.parse(productJ);
+let products = productJ ?  JSON.parse(productJ) : [];
 let table = document.querySelector('table tbody');
 let productIndexToEdit = null;
 //add modal
